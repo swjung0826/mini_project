@@ -33,3 +33,23 @@ printf("입력 : "); scanf("%d", &menu);
        return menu;
 };
 
+void readProduct(Product p){
+        printf("제품명 : %s\n", p.name);
+        printf("제품설명 : %s\n", p.explain);
+        printf("중량 : %s\n", p.amount);
+        printf("가격 : %d\n", p.price);
+        if(p.delivery == 1)
+                printf("배송 방법 : 새벽배송\n");
+        else
+                printf("배송 방법 : 택배배송\n");
+};
+
+void listProduct(Product *p[], int count){
+        for(int i=0; i<count; i++){
+                if(p[i]==NULL) continue;
+                printf("%-2d ", i+1);
+                readProduct(*p[i]);
+                printf("\n");
+        }
+};
+

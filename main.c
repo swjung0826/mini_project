@@ -12,7 +12,11 @@ int main(){
                 if(count==19) break;
                 menu = selectMenu();
                 if(menu == 0) break;
-                else if(menu == 2){
+                if(menu == 1){
+                        if(count>0)
+                                listProduct(p,index);
+                }
+		else if(menu == 2){
                         p[index]=(Product *)malloc(sizeof(Product));
                         count += addProduct(p[index++]);
                 }
