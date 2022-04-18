@@ -137,3 +137,26 @@ void searchProduct(Product *p[], int count){
 
 };
 
+void searchName(Product *p[], int count){
+        char search[30];
+        int scnt=0;
+
+        printf("검색할 이름? ");
+        getchar();
+        scanf("%[^\n]", search);
+
+        for(int i=0; i<count; i++){
+                if(p[i]==NULL) continue;
+                if(strstr(p[i]->name,search)){
+                        printf("%-2d", i+1);
+                        readProduct(*p[i]);
+                        printf("\n");
+                        scnt++;
+                }
+        }
+        if(scnt==0) printf("=> 검색된 데이터 없음!\n");
+        else printf("%d개의 데이터 검색!\n", scnt);
+        printf("\n");
+
+};
+
