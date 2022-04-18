@@ -124,4 +124,16 @@ int loadProductData(Product *p[]){
         return num;
 };
 
+void searchProduct(Product *p[], int count){
+        int searchType;
+
+        printf("검색 방법을 선택하세요\n1. 이름 검색\n2. 가격대 검색\n3. 배송방법 검색\n");
+        scanf("%d", &searchType);
+        printf("\n");
+
+        if(searchType==1) searchName(p, count);
+        else if(searchType==2) searchPrice(p,count);
+        else if(searchType==3) searchDelivery(p,count);
+
+};
 

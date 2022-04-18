@@ -19,3 +19,5 @@ int deleteProduct(Product *p[], int count);
 void saveProductData(Product *p[], int count);
 
 int loadProductData(Product *p[]);
+
+void searchProduct(Product *p[], int count);
