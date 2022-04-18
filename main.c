@@ -23,7 +23,9 @@ int main(){
 		else if(menu == 3){
                         updateProduct(p);
                 }
-
+		else if(menu == 4){
+                        count = deleteProduct(p,index);
+		}
         }
         printf("종료됨!\n");
         return 0;

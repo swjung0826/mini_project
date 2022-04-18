@@ -76,3 +76,20 @@ int updateProduct(Product *p[]){
         return 1;
 };
 
+int deleteProduct(Product *p[], int count){
+        int delnum;
+
+        listProduct(p, count);
+        printf("\n삭제할 제품? (취소: 0) : ");
+        scanf("%d", &delnum);
+
+        if(delnum==0)
+                return 0;
+        else{
+                if(p[delnum-1]) free(p[delnum-1]);
+                p[delnum-1]=NULL;
+                count--;
+        }
+        return count;
+};
+
