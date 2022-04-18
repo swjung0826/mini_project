@@ -53,3 +53,26 @@ void listProduct(Product *p[], int count){
         }
 };
 
+int updateProduct(Product *p[]){
+        int num;
+        printf("수정할 제품의 번호는? ");
+        scanf("%d", &num);
+
+        printf("제품명 : ");
+        getchar();
+        scanf("%[^\n]", p[num-1]->name);
+        printf("제품설명 : ");
+        getchar();
+        scanf("%[^\n]", p[num-1]->explain);
+        printf("중량 : ");
+        getchar();
+        scanf("%[^\n]", p[num-1]->amount);
+        printf("가격 : ");
+        scanf("%d", &p[num-1]->price);
+        printf("배송 방법(1.새벽배송 / 2.택배배송) : ");
+        scanf("%d", &p[num-1]->delivery);
+        printf("=> 수정성공!\n");
+
+        return 1;
+};
+

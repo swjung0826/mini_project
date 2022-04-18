@@ -20,6 +20,10 @@ int main(){
                         p[index]=(Product *)malloc(sizeof(Product));
                         count += addProduct(p[index++]);
                 }
+		else if(menu == 3){
+                        updateProduct(p);
+                }
+
         }
         printf("종료됨!\n");
         return 0;
