@@ -7,6 +7,8 @@ int main(){
         int count=0, menu;
         int index=0;
 
+	count=loadProductData(p);
+        index=count;
 
         while(1){
                 if(count==19) break;
@@ -29,6 +31,9 @@ int main(){
 		else if(menu == 5){
                         saveProductData(p,index);
 		}
+		else if(menu == 6){
+                        searchProduct(p,index);
+                }
         }
         printf("종료됨!\n");
         return 0;

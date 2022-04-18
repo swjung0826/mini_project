@@ -105,3 +105,23 @@ void saveProductData(Product *p[], int count){
         printf("=> 저장완료!\n");
 };
 
+int loadProductData(Product *p[]){
+        int num=0;
+        FILE* file;
+        if((file= fopen("product.txt","r"))){
+                while(!feof(file)){
+                        p[num]=(Product *)malloc(sizeof(Product));
+
+                        int r = fscanf(file, "%d %d %[^\n] %[^\n] %[^\n]", &p[num]->price, &p[num]->delivery, p[num]->name, p[num]->explain, p[num]->amount);
+                        if(r<=1) break;
+                        num++;
+                }
+                fclose(file);
+                printf("\n=> 로딩성공!\n");
+        }
+        else printf("=>데이터 없음");
+
+        return num;
+};
+
+
