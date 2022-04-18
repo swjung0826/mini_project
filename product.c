@@ -160,3 +160,46 @@ void searchName(Product *p[], int count){
 
 };
 
+void searchPrice(Product *p[], int count){
+        int search;
+        int scnt=0;
+
+        printf("검색 가격대 선택\n\n0. 10000원 이하\n1. 10000원 대\n2. 20000원 대\n3. 30000원 대\n");
+        scanf("%d", &search);
+
+        for(int i=0; i<count; i++){
+                if(p[i]==NULL) continue;
+                if(search==0){
+                        if(p[i]->price<10000){
+                                printf("%-2d ", i+1);
+                                readProduct(*p[i]);
+                                printf("\n");
+                                scnt++;
+                        }
+                }else if(search==1){
+                        if(p[i]->price >= 10000 && p[i]->price<20000){
+                                printf("%-2d ", i+1);
+                                readProduct(*p[i]);
+                                printf("\n");
+                                scnt++;
+                        }
+                }else if(search==2){
+                        if(p[i]->price>=20000 && p[i]->price<30000){
+                                printf("%-2d ", i+1);
+                                readProduct(*p[i]);
+                                printf("\n");
+                                scnt++;
+                        }
+                }else if(search==3){
+                        if(p[i]->price>=30000){
+                                printf("%-2d ", i+1);
+                                readProduct(*p[i]);
+                                printf("\n");
+                                scnt++;
+                        }
+                }
+        }
+if(scnt==0) printf("\n=>검색된 데이터 없음!\n");
+        else printf("\n=> %d개의 데이터 검색!\n", scnt);
+};
+

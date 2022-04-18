@@ -23,3 +23,5 @@ int loadProductData(Product *p[]);
 void searchProduct(Product *p[], int count);
 
 void searchName(Product *p[], int count);
+
+void searchPrice(Product *p[], int count);
