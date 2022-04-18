@@ -93,3 +93,15 @@ int deleteProduct(Product *p[], int count){
         return count;
 };
 
+void saveProductData(Product *p[], int count){
+        FILE*file;
+        file= fopen("product.txt", "w");
+
+        for(int i=0; i<count; i++){
+                if(p[i]==NULL) continue;
+                fprintf(file, "%d %d %s\n%s\n%s\n", p[i]->price, p[i]->delivery, p[i]->name, p[i]->explain, p[i]->amount);
+        }
+        fclose(file);
+        printf("=> 저장완료!\n");
+};
+

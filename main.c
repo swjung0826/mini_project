@@ -26,6 +26,9 @@ int main(){
 		else if(menu == 4){
                         count = deleteProduct(p,index);
 		}
+		else if(menu == 5){
+                        saveProductData(p,index);
+		}
         }
         printf("종료됨!\n");
         return 0;
